@@ -2,6 +2,9 @@ class PostsController < ApplicationController
 
   def index
   	@posts = Post.all.order("created_at ASC")
+  	if Post.count > 0
+  		redirect_to post_path(Post.all.first)
+  	end
   end
 
   def show
@@ -46,6 +49,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-  	params.require(:post).permit(:description)
+  	params.require(:post).permit(:description, :image)
   end
 end

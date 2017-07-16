@@ -1,11 +1,16 @@
 <h1>Add Post</h1>
-<%= form_for :post, url: posts_path do |f| %>
+<%= form_for :post, url: posts_path, html: { multipart: true } do |f| %>
 
 	<% if @post.errors.any? %>
 		<% @post.errors.full_messages.each do |msg| %>
 			<div class="alert alert-danger"><%= msg %></div>
 		<% end %>
 	<% end %>
+
+	
+		<%= f.label :image %><br>
+		<%= f.file_field(:image, {:class => 'form-control'}) %>
+	
 
 	<p>
 		<%= f.label :description %><br>
