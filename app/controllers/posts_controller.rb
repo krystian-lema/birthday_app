@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+	http_basic_authenticate_with name: "dwudzieste", password: "urodziny"
 
   def index
   	@posts = Post.all.order("created_at ASC")
