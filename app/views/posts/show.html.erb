@@ -1,0 +1,12 @@
+<h2><%= @post.description %></h2>
+<hr>
+<%= link_to "Edit", edit_post_path(@post), :class => 'btn btn-default' %>
+<%= link_to "Delete", post_path(@post), 
+				method: :delete,
+				data: {confirm: "Are you sure?"},
+				:class => 'btn btn-danger' %>
+</hr>
+
+<br>
+<%= link_to("Previous Post", @post.previous) if @post.previous %>
+<%= link_to("Następny", @post.next) if @post.next %>
