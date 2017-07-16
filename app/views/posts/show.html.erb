@@ -1,14 +1,11 @@
-
-
-
 <center><h2><%= @post.description %></h2></center>
 <br>
 <center><%= image_tag @post.image.url(:large) %></center>
 <br>
-<center><%= link_to("Następny", @post.next, :class => 'btn btn-default') if @post.next %></center>
+<center><%= link_to("Dalej", @post.next, :class => 'btn btn-default') if @post.next %></center>
 <center><%= link_to("Jeszcze raz?", root_path, :class => 'btn btn-default') unless @post.next %>
 
-<br><br>
+<br><br><br><br>
 <center>
 <%= link_to "Edit", edit_post_path(@post), :class => 'btn btn-default' %>
 <%= link_to "Delete", post_path(@post), 
