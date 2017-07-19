@@ -5,13 +5,3 @@
 <center><%= link_to("Dalej", @post.next, :class => 'btn btn-default') if @post.next %></center>
 <center><%= link_to("Jeszcze raz?", root_path, :class => 'btn btn-default') unless @post.next %>
 
-<br><br><br><br>
-<center>
-<%= link_to "Edit", edit_post_path(@post), :class => 'btn btn-default' %>
-<%= link_to "Delete", post_path(@post), 
-				method: :delete,
-				data: {confirm: "Are you sure?"},
-				:class => 'btn btn-danger' %>
-</hr>
-</center>
-
